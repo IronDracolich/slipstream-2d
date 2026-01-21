@@ -9,7 +9,7 @@
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "target": "ES2020",
-    "moduleResolution": "node",
+    "moduleResolution": "nodeNext",
     "rootDir": "./src",
     "outDir": "./dist",
     "types": [],

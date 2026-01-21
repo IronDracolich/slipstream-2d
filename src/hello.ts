@@ -5,4 +5,4 @@ function speak(n: number, s:string){
 
 }
 
-speak(16, "hi");
+speak(1, "hi");
