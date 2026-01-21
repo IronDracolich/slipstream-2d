@@ -12,7 +12,7 @@
     "moduleResolution": "nodeNext",
     "rootDir": "./src",
     "outDir": "./dist",
-    "types": [],
+    "types": ["node"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     // For nodejs:
