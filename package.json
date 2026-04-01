@@ -1,18 +1,8 @@
 {
-	"name": "ts_dev_skeleton",
-	"version": "1.0.0",
-	"scripts": {
-		"test": "jest",
-		"test:watch": "jest watch",
-		"build": "tsc",
-		"start": "node dist/index.js",
-		"dev": "tsc --watch"
-	},
-	"devDependencies": {
-		"@types/jest": "^30.0.0",
-		"@types/node": "^25.0.9",
-		"jest": "^30.2.0",
-		"ts-jest": "^29.4.6",
-		"typescript": "^5.9.3"
-	}
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "tsc",
+    "start": "ts-node src/game/main.ts"
+  }
 }
