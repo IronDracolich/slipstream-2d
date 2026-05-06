@@ -32,6 +32,7 @@ describe('GameLoop', () => {
       loop.start();
       expect(loop.isRunning()).toBe(true);
       loop.stop();
+      expect(loop.isRunning()).toBe(false);
     });
 
     test('should not error when called twice', () => {
@@ -40,6 +41,7 @@ describe('GameLoop', () => {
       loop.start(); // Should not throw
       expect(loop.isRunning()).toBe(true);
       loop.stop()
+      expect(loop.isRunning()).toBe(false);
     });
   });
 

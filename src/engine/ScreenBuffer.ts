@@ -19,7 +19,7 @@ export class ScreenBuffer {
    * @param height - Number of rows
    * @param fillChar - Character used for empty cells (default: ".")
    */
-  constructor(width: number, height: number, fillChar: string = " ") {
+  constructor(width: number, height: number, fillChar: string = ".") {
     // TODO: Initialize properties and build the grid
     this.width = width
     this.height = height    

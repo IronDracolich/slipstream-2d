@@ -53,7 +53,6 @@ export class Renderer {
     for(let i = 0; i < this.renderables.length; i++){
       this.renderables[i]?.drawTo(this.buffer)
     }
-    this.buffer.writeText(1,19, "asdf")
 
 
   }

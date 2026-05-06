@@ -6,11 +6,11 @@ import {Renderer} from "./Renderer"
 export const ENGINE_VERSION: string = "0.1.0"
 export const ENGINE_NAME:string = "Slipstream 2D"
 export const ENGINE_STATUS:string = "stable"
-const SCREEN_BUFFER: ScreenBuffer = new ScreenBuffer(20, 20, "-")
+const SCREEN_BUFFER: ScreenBuffer = new ScreenBuffer(50, 30, "-")
 const PLAYER:Player = new Player
 const RENDERER: Renderer = new Renderer(SCREEN_BUFFER);
 
-const GAME_LOOP: GameLoop = new GameLoop(1, step)
+const GAME_LOOP: GameLoop = new GameLoop(30, step)
 
 function step(deltaT:number):void{
   PLAYER.update(deltaT, SCREEN_BUFFER);

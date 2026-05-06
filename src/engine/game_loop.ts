@@ -27,10 +27,16 @@ export class GameLoop {
   }
   /** Start the game loop */
   start(): void {
+    if(this.running){
+      return;
+    }
+    if(this.intervalId){
+      clearInterval(this.intervalId);
+    }
     this.running = true
-    setInterval(()=>{
+    this.intervalId = setInterval(()=>{
       this.tick();
-      console.log(this.lastTickTime)
+      //console.log(this.lastTickTime)
   }, this.frameInterval);
   }
 
