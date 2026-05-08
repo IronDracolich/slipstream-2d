@@ -20,10 +20,10 @@ export class GameLoop {
     this.frameInterval = 1/this.targetFps * 1000
     this.onTick = onTick
     this.intervalId = null
-    this.date = new Date(); 
+    this.date = new Date();
     this.current_time = (this.date.getHours() * 60 * 60) + (this.date.getMinutes() * 60) + this.date.getSeconds()
     this.tickTimestamps = [];
-    this.delta_time = this.current_time - this.lastTickTime; 
+    this.delta_time = this.current_time - this.lastTickTime;
   }
   /** Start the game loop */
   start(): void {
@@ -51,12 +51,11 @@ export class GameLoop {
     //console.log("called")
 
     if (this.isRunning()){
-      this.current_time = ((this.date.getHours() * 60 * 60) + (this.date.getMinutes() * 60) + this.date.getSeconds()) * 1000;
-      this.tickTimestamps.push(this.current_time)
+      this.current_time = this.date.valueOf()/1000.0;
+      this.tickTimestamps.push(this.current_time);
       this.delta_time = this.current_time - this.lastTickTime
       this.lastTickTime = this.current_time
       this.tickCount += 1;
-      this.lastTickTime
       this.onTick(this.delta_time)
       this.date = new Date();
     }

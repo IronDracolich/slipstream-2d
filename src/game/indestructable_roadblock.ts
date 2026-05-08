@@ -4,7 +4,7 @@ import { ScreenBuffer } from "../engine/ScreenBuffer";
 class IndRoadblock implements Renderable{
   x:number;
   y:number;
-  model:string = "_"
+  model:string = "___"
   constructor(){
     this.x = 0;
     this.y = 0;
