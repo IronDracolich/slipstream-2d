@@ -11,7 +11,8 @@ export class RenderSystem implements System {
 
   update(world: EntityManager, deltaTime: number): void {
     this.buffer.clear();
-    for (const entity of world.query("position", "appearance")) {
+    let entities = world.query("position", "appearance");
+    for (const entity of entities) {
       const pos = world.getComponent(entity, "position") as Position;
       const app = world.getComponent(entity, "appearance") as Appearance;
       this.buffer.set(Math.round(pos.x), Math.round(pos.y), app.char);

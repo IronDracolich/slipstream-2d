@@ -1,7 +1,7 @@
 import { System } from '../engine/System';
 import { EntityManager } from '../engine/EntityManager';
 import { InputSource } from '../engine/InputSource';
-import { Velocity, Position } from './components';
+import { Velocity, Position, Movable } from './components';
 
 export class PlayerInputSystem implements System {
   private speed:number;
@@ -20,15 +20,18 @@ export class PlayerInputSystem implements System {
     for(let entity of world.query("position", "velocity", "movable")){
       let pos = world.getComponent(entity, "position") as Position;
       let vel = world.getComponent(entity, "velocity") as Velocity;
-
-      if(this.input.isKeyPressed("d")){
-        vel.dx = this.speed
-      }else if( this.input.isKeyPressed("a")){
-        vel.dx = -this.speed
-      }else{
-        vel.dx =0;
+      let movable = world.getComponent(entity, "movable") as Movable
+      if (movable.movable){
+        if(this.input.isKeyPressed("d")){
+          vel.dx = this.speed
+        }else if( this.input.isKeyPressed("a")){
+          vel.dx = -this.speed
+        }else{
+          vel.dx =0;
+        }
       }
     }
+
   }
 
 

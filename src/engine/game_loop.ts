@@ -15,15 +15,15 @@ export class GameLoop {
   constructor(targetFps: number = 30, onTick: (deltaTime: number) => void) {
     this.running = false
     this.tickCount = 0;
-    this.lastTickTime = 0;
     this.targetFps = targetFps
     this.frameInterval = 1/this.targetFps * 1000
     this.onTick = onTick
     this.intervalId = null
     this.date = new Date();
-    this.current_time = (this.date.getHours() * 60 * 60) + (this.date.getMinutes() * 60) + this.date.getSeconds()
-    this.tickTimestamps = [];
-    this.delta_time = this.current_time - this.lastTickTime;
+    this.current_time = this.date.valueOf()/1000.0;
+    this.lastTickTime = this.current_time - 1.0/targetFps;
+    this.tickTimestamps = [this.lastTickTime];
+    this.delta_time = 1.0/targetFps;
   }
   /** Start the game loop */
   start(): void {

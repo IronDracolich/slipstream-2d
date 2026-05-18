@@ -8,13 +8,14 @@ import { Position, Velocity } from '../game/components';
  */
 export class MovementSystem implements System {
   update(world: EntityManager, deltaTime: number): void {
-    for(let entity of world.query("position", "velocity")){
+    let entities = world.query("position", "velocity");
+
+    for(let i = 0; i<entities.length; i++){//let entity of entities){
+      let entity = entities[i]!;
       let pos = world.getComponent(entity, "position") as Position;
       let vel = world.getComponent(entity, "velocity") as Velocity;
       pos.x += vel.dx * deltaTime;
       pos.y += vel.dy * deltaTime;
     }
-    // TODO: query for entities with both "position" and "velocity"
-    // TODO: for each, update position by velocity * deltaTime
   }
 }

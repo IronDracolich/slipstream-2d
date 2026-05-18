@@ -24,10 +24,10 @@ export class BoundsSystem implements System {
       if(pos.x >= this.width-1){
         pos.x = this.width - 1
       }
-      if(pos.y > this.height){
-        pos.y = this.height
+      if(pos.y > this.height - 1){
+        pos.y = this.height - 1
       }
-      if(pos.y <0){
+      if(pos.y < 0){
         pos.y = 0
       }
       if(pos.x <0){

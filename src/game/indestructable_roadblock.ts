@@ -1,7 +1,7 @@
 import { Renderable } from "../engine/Renderable";
 import { ScreenBuffer } from "../engine/ScreenBuffer";
 
-class IndRoadblock implements Renderable{
+export class IndRoadblock implements Renderable{
   x:number;
   y:number;
   model:string = "___"

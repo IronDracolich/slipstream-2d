@@ -12,6 +12,7 @@ export class Player implements Renderable{
     this.y = 3;
   }
   update(deltaTime:number, screen_buffer: ScreenBuffer){
+    return;
     if (this.input.isKeyPressed('a') && this.x >=0){
       this.x -=1;
     }
